@@ -1,0 +1,59 @@
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #db2525;
+    }
+    nav {
+      background-color: #1f1f1f;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h1 {
+      margin: 0;
+      color: #00c3ff;
+    }
+    nav select {
+      padding: 5px;
+      background-color: #2c2c2c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    main {
+      padding: 20px;
+    }
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .movie {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+    .movie img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .movie-title {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    .pagination {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .pagination button {
+      margin: 0 5px;
+      padding: 8px 12px;
+      background-color: #00c3ff;
+      border: none;
+      border-radius: 4px;
+      color: #000;
+      cursor: pointer;
+    }

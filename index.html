@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Music-List</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>TMDB Catalogo</h1>
+            <select id="genreSelect">
+                <option value="">Tutti i generi</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <div class="movies" id="movies"></div>
+        <div class="pagination">
+            <button id="previous">⬅️ Indietro</button>
+            <button id="next">Avanti ➡️</button>
+        </div>
+    </main>
+    <script type="module" src="./script/script.js"></script>
+</body>
+</html>
