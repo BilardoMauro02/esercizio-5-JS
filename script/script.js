@@ -35,7 +35,7 @@ async function loadMoviePage(page = 1){
       const container = document.querySelector('.movies');
       container.innerHTML = '';
       //CICLA I RISULTATI LIMITANDO A 10 STAMPE
-      data.results.slice(0,18).forEach(movie => {
+      data.results.slice(0,18).forEach(async movie => {
         fetch(`https://api.themoviedb.org/3/movie/${movie.id}`, options)
           .then(response => response.json())
           .then(details =>{
