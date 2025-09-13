@@ -1,5 +1,5 @@
-import { fetchPopularMovies } from './tmdbService.js';
-import { renderMovies } from './render.js';
+import { fetchPopularMovies, getGeneri, loadMoviesByGenre } from './tmdbService.js';
+import { renderGeneri, renderMovies } from './render.js';
 
 const btn1 = document.getElementById("previous");
 const btn2 = document.getElementById("next");
@@ -18,6 +18,11 @@ btn2.addEventListener('click', () => {
   loadMoviePage(page);
 });
 
+document.querySelector('#genereSelect').addEventListener('change', async(e) => {
+  const selectedGenereId = e.target.value;
+  await loadMoviesByGenre(selectedGenereId);
+});
+
 async function loadMoviePage(page = 1) {
   try {
     const data = await fetchPopularMovies(page);
@@ -27,4 +32,16 @@ async function loadMoviePage(page = 1) {
   }
 }
 
-window.onload = () => loadMoviePage();
+async function loadGeneri() {
+  try{
+    const data = await getGeneri();
+    await renderGeneri(data);
+  }catch(err){
+    console.error('errore nel caricamento', err);
+  }
+}
+
+window.onload = () => {
+  loadMoviePage();
+  loadGeneri();
+};
