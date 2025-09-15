@@ -24,9 +24,10 @@ document.querySelector('#genereSelect').addEventListener('change', async(e) => {
 });
 
 async function loadMoviePage(page = 1) {
+  const select = document.getElementById('#genereSelect');
   try {
-    const data = await fetchPopularMovies(page);
-    await renderMovies(data.results);
+      const data = await fetchPopularMovies(page);
+      await renderMovies(data.results);
   } catch (err) {
     console.error('Errore nel caricamento:', err);
   }
@@ -41,7 +42,7 @@ async function loadGeneri() {
   }
 }
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
   loadMoviePage();
   loadGeneri();
-};
+});
